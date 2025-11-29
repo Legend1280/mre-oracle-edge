@@ -1,20 +1,7 @@
 {
-  "version": 2,
-  "name": "mre-oracle",
-  "builds": [
-    {
-      "src": "api/**/*.ts",
-      "use": "@vercel/node"
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "edge"
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    }
-  ],
-  "env": {
-    "OPENAI_API_KEY": "@openai-api-key",
-    "MRE_API_KEY": "@mre-api-key"
   }
 }
